@@ -1,3 +1,3 @@
-import Ship from './Ship.js';
+import Ship from './ship.js';
 
-console.log(new Ship());
+console.log(Ship(3));
