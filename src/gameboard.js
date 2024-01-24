@@ -7,10 +7,17 @@ function Gameboard() {
         board.push(new Array(10).fill(0));
     }
 
-    function placeShip([x, y]) {
-        const ship = Ship(3);
-        for (let i = y; i < y + ship.length; i++) {
-            board[x][i] = 1;
+    function placeShip([x, y], length, isVertical) {
+        const ship = Ship(length);
+
+        if (isVertical) {
+            for (let i = x; i < x + ship.length; i++) {
+                board[i][y] = 1;
+            }
+        } else {
+            for (let i = y; i < y + ship.length; i++) {
+                board[x][i] = 1;
+            }
         }
     }
 
